@@ -12,6 +12,13 @@ class LocationViewModel: ViewModel() {
     fun setCoordinates(userCoordinates: LatLng) {
         _coordinates.postValue(userCoordinates)
     }
-
+    private val _total = MutableLiveData<Int>()
+    val total: LiveData<Int> = _total
+    init {
+        _total.postValue(0)
+    }
+    fun increaseTotal() {
+        _total.postValue((_total.value ?: 0) + 1)
+    }
 
 }

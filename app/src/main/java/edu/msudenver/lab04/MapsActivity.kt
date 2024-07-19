@@ -113,6 +113,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
 
                 updateCarMarker(location)
             }
+            locationViewModel.increaseTotal()
         }
 
         startTimer(1000)
